@@ -12,6 +12,23 @@
   var fmt = function (d) { return String(d || "").replace(/-/g, ".").slice(0, 7); };
   var fill = function (id, html) { var el = $(id); if (el) el.innerHTML = html; };
 
+  // ===== 言語（?lang=en / ja。選択はブラウザに記憶） =====
+  var lang = "ja";
+  try {
+    var q = new URLSearchParams(location.search).get("lang");
+    if (q === "en" || q === "ja") localStorage.setItem("lang", q);
+    lang = localStorage.getItem("lang") === "en" ? "en" : "ja";
+  } catch (e) {
+    if (/[?&]lang=en/.test(location.search)) lang = "en";
+  }
+  var EN = window.SITE_EN || {};
+  var L = function (s) { return lang === "en" && EN[s] != null ? EN[s] : s; };
+  var quote = function (html) { return lang === "en" ? "“" + html + "”" : "「" + html + "」"; };
+  document.documentElement.lang = lang;
+  if (lang === "en") {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-en]"), function (el) { el.innerHTML = el.getAttribute("data-en"); });
+  }
+
   // 新しい順に並べる
   var key = function (d) { return /^\d/.test(d || "") ? String(d).replace(/\./g, "-") : "0"; };
   ["shogiGo", "kaggle", "talks", "tv", "media", "writing"].forEach(function (k) {
@@ -28,7 +45,9 @@
     '<a class="site-name" href="index.html">Yu Yamaguchi</a><nav class="nav">' +
     PAGES.map(function (p) {
       return '<a href="' + p[0] + '"' + (p[0] === current ? ' class="active" aria-current="page"' : "") + ">" + p[1] + "</a>";
-    }).join("") + "</nav>");
+    }).join("") + '<span class="lang">' +
+    (lang === "ja" ? '<b>日本語</b> / <a href="?lang=en">English</a>' : '<a href="?lang=ja">日本語</a> / <b>English</b>') +
+    "</span></nav>");
   fill("site-footer", "© Yu Yamaguchi");
 
   // ===== Home =====
@@ -45,14 +64,14 @@
   }).join(""));
 
   fill("career-list", D.timeline.map(function (t) {
-    return row(t.period.replace(/ — /g, "–").replace(/ —$/, "–"), esc(t.org) + ' <span class="sub">' + esc(t.role) + "</span>");
+    return row(t.period.replace(/ — /g, "–").replace(/ —$/, "–"), esc(L(t.org)) + ' <span class="sub">' + esc(L(t.role)) + "</span>");
   }).join(""));
 
   // ===== Research =====
   fill("research-list", D.research.map(function (r) {
-    return '<li><span class="date">' + esc(r.period) + '</span><div><div class="r-title">' + link(r.title, r.url) + "</div>" +
-      '<div class="sub">' + esc(r.program) + (r.role ? " — " + esc(r.role) : "") + "</div>" +
-      (r.desc ? '<div class="r-desc">' + esc(r.desc) + "</div>" : "") + "</div></li>";
+    return '<li><span class="date">' + esc(r.period) + '</span><div><div class="r-title">' + link(L(r.title), r.url) + "</div>" +
+      '<div class="sub">' + esc(L(r.program)) + (r.role ? " — " + esc(L(r.role)) : "") + "</div>" +
+      (r.desc ? '<div class="r-desc">' + esc(L(r.desc)) + "</div>" : "") + "</div></li>";
   }).join(""));
 
   fill("paper-list", D.papers.map(function (p) {
@@ -62,42 +81,42 @@
   }).join(""));
 
   // ===== Projects =====
-  fill("topic-toc", ['<a href="#repositories">Repositories</a>'].concat(D.topics.map(function (t) { return '<a href="#' + esc(t.id) + '">' + esc(t.title) + "</a>"; })).join(" / "));
+  fill("topic-toc", ['<a href="#repositories">Repositories</a>'].concat(D.topics.map(function (t) { return '<a href="#' + esc(t.id) + '">' + esc(L(t.title)) + "</a>"; })).join(" / "));
   fill("repo-list", D.repos.map(function (r) {
     return '<li><a class="repo-name" href="' + esc(r.url) + '"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">' + ICONS.GitHub + "</svg>" + esc(r.name.split("/").pop()) + "</a>" +
-      ' <span class="sub">' + esc(r.lang) + " · ★ " + r.stars + "</span><br>" + esc(r.desc) + "</li>";
+      ' <span class="sub">' + esc(r.lang) + " · ★ " + r.stars + "</span><br>" + esc(L(r.desc)) + "</li>";
   }).join(""));
 
   // text は data.js に書いた HTML をそのまま使う
   fill("topic-list", D.topics.map(function (t) {
-    return '<section class="topic" id="' + esc(t.id) + '"><h2>' + esc(t.title) + "</h2>" +
-      '<p class="lead">' + esc(t.summary) + "</p>" +
+    return '<section class="topic" id="' + esc(t.id) + '"><h2>' + esc(L(t.title)) + "</h2>" +
+      '<p class="lead">' + esc(L(t.summary)) + "</p>" +
       t.groups.map(function (g) {
-        return "<h3>" + esc(g.heading) + "</h3><p>" + g.text + "</p>";
+        return "<h3>" + esc(L(g.heading)) + "</h3><p>" + L(g.text) + "</p>";
       }).join("") + "</section>";
   }).join(""));
 
   // ===== Competitions =====
   fill("shogigo-list", D.shogiGo.map(function (r) {
-    return row(r.date, link(r.name, r.url) + " — <b>" + esc(r.result) + '</b> <span class="sub">(' + esc(r.entry) + ")</span>");
+    return row(r.date, link(L(r.name), r.url) + " — <b>" + esc(L(r.result)) + '</b> <span class="sub">(' + esc(r.entry) + ")</span>");
   }).join(""));
   fill("kaggle-list", D.kaggle.map(function (r) {
     var medal = r.medal === "gold" ? "金メダル" : r.medal === "silver" ? "銀メダル" : r.medal === "award" ? "2位" : "";
-    var writeup = r.writeup ? " [" + link("解法", r.writeup) + "]" : "";
-    return row(r.date, link(r.name, r.url) + (medal ? " — <b>" + esc(medal) + "</b>" : "") + ' <span class="sub">(' + esc(r.rank) + ", " + esc(r.team) + ")</span>" + writeup);
+    var writeup = r.writeup ? " [" + link(L("解法"), r.writeup) + "]" : "";
+    return row(r.date, link(r.name, r.url) + (medal ? " — <b>" + esc(L(medal)) + "</b>" : "") + ' <span class="sub">(' + esc(r.rank) + ", " + esc(r.team) + ")</span>" + writeup);
   }).join(""));
 
   // ===== Talks / Media / Writing =====
   fill("talk-list", D.talks.map(function (t) {
-    var label = t.type === "Upcoming" ? " <b>[予定]</b>" : t.type === "Keynote" ? " <b>[基調講演]</b>" : t.type === "Lecture" ? " [講義]" : t.type === "Panel" ? " [パネル]" : "";
-    var video = t.video && t.video !== t.url ? " [" + link("動画", t.video) + "]" : "";
-    return row(fmt(t.date), "「" + link(t.title, t.url) + "」" + label + video + '<br><span class="sub">' + esc(t.event) + "</span>");
+    var label = t.type === "Upcoming" ? " <b>" + L("[予定]") + "</b>" : t.type === "Keynote" ? " <b>" + L("[基調講演]") + "</b>" : t.type === "Lecture" ? " " + L("[講義]") : t.type === "Panel" ? " " + L("[パネル]") : "";
+    var video = t.video && t.video !== t.url ? " [" + link(L("動画"), t.video) + "]" : "";
+    return row(fmt(t.date), quote(link(t.title, t.url)) + label + video + '<br><span class="sub">' + esc(L(t.event)) + "</span>");
   }).join(""));
   fill("tv-list", D.tv.map(function (m) {
-    return row(fmt(m.date), esc(m.outlet) + "「" + link(m.title, m.url) + "」");
+    return row(fmt(m.date), esc(L(m.outlet)) + " " + quote(link(m.title, m.url)));
   }).join(""));
   fill("media-list", D.media.map(function (m) {
-    return row(fmt(m.date), esc(m.outlet) + "「" + link(m.title, m.url) + "」");
+    return row(fmt(m.date), esc(L(m.outlet)) + " " + quote(link(m.title, m.url)));
   }).join(""));
   var GROUPS = [
     ["技術記事", ["Zenn", "Qiita", "Speaker Deck"]], ["note", ["note"]], ["Kaggle Solutions", ["Kaggle"]],
@@ -105,7 +124,7 @@
   fill("writing-list", GROUPS.map(function (g) {
     var items = D.writing.filter(function (w) { return g[1].indexOf(w.site) >= 0; });
     if (!items.length) return "";
-    return "<section><h2>" + esc(g[0]) + '</h2><ul class="list">' + items.map(function (w) {
+    return "<section><h2>" + esc(L(g[0])) + '</h2><ul class="list">' + items.map(function (w) {
       var site = g[1].length > 1 ? ' <span class="sub">(' + esc(w.site) + ")</span>" : "";
       return row(fmt(w.date), link(w.title, w.url) + site);
     }).join("") + "</ul></section>";
