@@ -1,0 +1,101 @@
+:root {
+  --text: #222;
+  --sub: #666;
+  --line: #e5e5e5;
+  --link: #1a5fb4;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+/* header */
+.header {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 24px;
+  padding: 20px 0 12px; border-bottom: 1px solid var(--line);
+}
+.site-name { color: var(--text); font-weight: 700; font-size: 16px; }
+.site-name:hover { text-decoration: none; }
+.nav { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; }
+.nav a { color: var(--sub); }
+.nav a:hover, .nav a.active { color: var(--text); }
+.nav a.active { font-weight: 700; }
+
+/* intro */
+.intro { display: flex; gap: 28px; align-items: flex-start; padding: 36px 0 8px; }
+.photo { width: 160px; height: 160px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+h1 { font-size: 24px; font-weight: 700; margin: 0; line-height: 1.4; }
+h1 span { font-size: 16px; font-weight: 400; color: var(--sub); margin-left: 8px; }
+.affil { margin: 2px 0 12px; color: var(--sub); }
+.intro p { margin: 0 0 10px; }
+.profile-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 14px; }
+.profile-links a { display: inline-flex; align-items: center; gap: 6px; color: var(--text); white-space: nowrap; }
+.profile-links a:hover { color: var(--link); text-decoration: none; }
+.profile-links svg { flex-shrink: 0; }
+
+.page-title { font-size: 24px; margin: 36px 0 4px; }
+
+/* sections */
+section { padding-top: 12px; }
+h2 {
+  font-size: 18px; font-weight: 700; margin: 36px 0 12px; padding-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+}
+h3 { font-size: 15px; font-weight: 700; margin: 24px 0 8px; }
+.h-note { font-weight: 400; color: var(--sub); font-size: 13px; margin-left: 8px; }
+.note { color: var(--sub); margin: 0 0 8px; }
+
+/* lists: date | content */
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { display: grid; grid-template-columns: 124px 1fr; gap: 16px; padding: 3px 0; }
+.list .date { color: var(--sub); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.list .sub { color: var(--sub); }
+.list .tag { color: var(--sub); font-size: 13px; }
+.list--plain li { display: block; padding: 6px 0; }
+.list--plain .desc { color: var(--sub); }
+.list--research li { padding: 8px 0; }
+.list--repos li { display: block; padding: 6px 0; }
+.repo-name { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; }
+.r-title { font-weight: 500; }
+.r-desc { font-size: 14px; margin-top: 2px; }
+.lead { margin: 0 0 8px; font-size: 16px; }
+.bullets { margin: 0; padding-left: 1.3em; }
+.bullets li { padding: 3px 0; }
+.small { font-size: 13px; }
+.topic + .topic { margin-top: 16px; }
+.topic h3 { margin: 20px 0 4px; }
+.topic p { margin: 0 0 8px; }
+.topic b { font-weight: 700; }
+.list--pubs li { display: block; padding: 6px 0; }
+.list--pubs .title { font-weight: 500; }
+.list--pubs .authors { color: var(--sub); font-size: 14px; }
+.list--pubs .venue { font-style: italic; }
+
+.footer { margin: 48px 0 0; padding: 16px 0 32px; border-top: 1px solid var(--line); color: var(--sub); font-size: 13px; }
+
+@media (max-width: 600px) {
+  body { font-size: 14px; }
+  .intro { flex-direction: column; gap: 16px; padding-top: 24px; }
+  .photo { width: 120px; height: 120px; }
+  .list li { grid-template-columns: 1fr; gap: 0; padding: 6px 0; }
+}
+
+.page-photo { margin: 12px 0 8px; }
+.page-photo img { display: block; width: 100%; height: 240px; object-fit: cover; border-radius: 4px; }
+@media (max-width: 600px) { .page-photo img { height: 170px; } }
+.page-photo figcaption { margin-top: 4px; font-size: 12px; color: var(--sub); }
+.page-photo--figure img { height: auto; object-fit: contain; border: 1px solid var(--line); background: #fff; }
+.page-photo--natural img { width: auto; max-width: 100%; height: 300px; }
+.page-photo .credit { margin-top: 2px; font-size: 10px; color: #b0b0b0; text-align: right; }
+.page-photo .credit a { color: inherit; }
