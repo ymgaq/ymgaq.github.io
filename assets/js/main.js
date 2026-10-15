@@ -134,4 +134,13 @@
       return row(fmt(w.date), link(w.title, w.url) + site);
     }).join("") + "</ul></section>";
   }).join(""));
+
+  // ===== サイト内リンクに言語を引き継ぐ（localStorage が使えない環境でも切り替わるように） =====
+  Array.prototype.forEach.call(document.querySelectorAll("a[href]"), function (a) {
+    var href = a.getAttribute("href");
+    if (/^[a-z]+:|^\/\//i.test(href) || href.charAt(0) === "#" || href.charAt(0) === "?") return;
+    if (!/\.html(#|$)/.test(href)) return;
+    var parts = href.split("#");
+    a.setAttribute("href", parts[0] + "?lang=" + lang + (parts[1] ? "#" + parts[1] : ""));
+  });
 })();
