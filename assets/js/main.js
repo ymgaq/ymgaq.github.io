@@ -41,13 +41,18 @@
     ["competitions.html", "Competitions"], ["writing.html", "Writing"], ["talks.html", "Talks"], ["media.html", "Media"],
   ];
   var current = document.body.dataset.page;
+  var langBtn = function (code, label) {
+    return code === lang
+      ? '<span class="lang-btn is-active" aria-current="true">' + label + "</span>"
+      : '<a class="lang-btn" href="?lang=' + code + '" hreflang="' + code + '">' + label + "</a>";
+  };
   fill("site-header",
-    '<a class="site-name" href="index.html">Yu Yamaguchi</a><nav class="nav">' +
+    '<div class="header-top"><a class="site-name" href="index.html">Yu Yamaguchi</a>' +
+    '<div class="lang-switch" role="group" aria-label="Language">' + langBtn("ja", "日本語") + langBtn("en", "English") + "</div></div>" +
+    '<nav class="nav">' +
     PAGES.map(function (p) {
       return '<a href="' + p[0] + '"' + (p[0] === current ? ' class="active" aria-current="page"' : "") + ">" + p[1] + "</a>";
-    }).join("") + '<span class="lang">' +
-    (lang === "ja" ? '<b>日本語</b> / <a href="?lang=en">English</a>' : '<a href="?lang=ja">日本語</a> / <b>English</b>') +
-    "</span></nav>");
+    }).join("") + "</nav>");
   fill("site-footer", "© Yu Yamaguchi");
 
   // ===== Home =====
