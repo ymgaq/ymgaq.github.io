@@ -19,60 +19,9 @@ window.SITE_DATA = {
     { name: "ymgaq/ptcg-population-rl", url: "https://github.com/ymgaq/ptcg-population-rl", lang: "Python", stars: 23, desc: "Kaggle「PTCG AI Battle Challenge」24位解法の学習パイプライン（模倣学習・蒸留・PPO）" },
   ],
 
-  topics: [
-    {
-      id: "strategy-ai",
-      title: "Strategy AI",
-      summary: "2016年からプログラミングを習得し、深層学習と強化学習を用いた囲碁・将棋AIの開発を始めました。開発したAIは世界大会で上位に入り、プロ棋士の対局中継で形勢評価に使われています。",
-      groups: [
-        {
-          heading: "囲碁AI",
-          text: "個人開発の囲碁AI「AQ」を、超人間級の囲碁AIとして世界で初めてオープンソースで公開しました（<a href=\"https://github.com/ymgaq/AQ\">GitHub</a>）。2018年1月に Computer Go Server（CGOS）で当時の公開囲碁ソフトとして最高水準のレーティング（<b>Elo 約3,940</b>）を記録し、日本棋院のネット対局サービス「幽玄の間」にも導入されています。2018年の世界電脳囲碁オープン戦で<b>準優勝</b>、騰訊世界人工知能囲碁大会で<b>3位</b>。後継の国産囲碁AIプロジェクト「GLOBIS-AQZ」では、2019年の UEC杯コンピュータ囲碁大会で<b>準優勝</b>し、ABEMA の企画で仲邑菫初段との対局に勝利しました。",
-        },
-        {
-          heading: "将棋AI",
-          text: "個人開発の将棋AI「PAL」で、世界コンピュータ将棋選手権の第28回（2018年）と第31回（2021年）に<b>準優勝</b>。2022年には HEROZ のチーム「dlshogi with HEROZ」の一員として、第32回大会で<b>優勝</b>しました。PAL は <b>2021年度から NHK杯テレビ将棋トーナメント</b>の形勢評価に使われ続けており、AI の予想手も表示しています（囲碁トーナメントでは AQ を使用）。2024年からは、日本経済新聞社の「日経LIVE」による<b>将棋 王座戦</b>の中継で AI の形勢評価・予想手の表示システムを担当し、現在も使われています。",
-        },
-        {
-          heading: "チェス・カードゲーム",
-          text: "Kaggle のコンペ「FIDE & Google Efficient Chess AI Challenge」（2025年）では、提出サイズ64KBの制約下で動くチェスエンジンを開発し、<b>9位 / 1,120チームで金メダル</b>を獲得しました（<a href=\"https://www.kaggle.com/competitions/fide-google-efficiency-chess-ai-challenge/discussion/567106\">解法</a>）。「PTCG AI Battle Challenge」（2026年）では模倣学習・蒸留・強化学習を組み合わせたポケモンカードゲームAIをチームで開発し、<b>24位 / 6,807チーム</b>でした（<a href=\"https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/writeups/24th-solution-a-population-based-rl-ecosystem\">解法</a>）。",
-        },
-      ],
-    },
-    {
-      id: "distributed",
-      title: "大規模分散学習",
-      summary: "スーパーコンピュータでの並列分散強化学習から、自社 GPU クラスタの構築、自動運転モデル向けのデータ・学習基盤まで、大規模な計算資源を使ったAI開発に取り組んでいます。",
-      groups: [
-        {
-          heading: "スーパーコンピュータでの強化学習",
-          text: "国産囲碁AIプロジェクト「GLOBIS-AQZ」（2018–2019年、グロービス・日本棋院・トリプルアイズ・産業技術総合研究所との共同プロジェクト）で、産総研のスーパーコンピュータ ABCI（2018年当時 TOP500 で世界5位）の最大1/4にあたる <b>GPU 1,100基</b>を用いる並列分散強化学習を設計・開発しました（<a href=\"https://www.itmedia.co.jp/news/articles/1904/19/news100.html\">ITmedia</a>）。ゼロから<b>5時間</b>の学習でプロ棋士に勝つ強さに到達し、成果は AQ v4 としてオープンソースで公開しています。",
-        },
-        {
-          heading: "GPU クラスタとクラウド",
-          text: "チューリングで、オンプレミスの GPU クラスタ「Gaggle Cluster」（<b>NVIDIA H100 96基</b>、2024年稼働）を構築しました（<a href=\"https://prtimes.jp/main/html/rd/p/000000039.000098132.html\">発表</a>）。これに Google Cloud・AWS・GMO GPUクラウドなどのクラウド GPU を組み合わせた分散学習基盤を運用しており、NEDO GENIAC 第1期（2024年）では最大 <b>70B 級</b>のマルチモーダルモデルを学習しました。",
-        },
-        {
-          heading: "データ基盤とツール",
-          text: "<b>ペタバイト級</b>の走行データから学習用データセットを生成するパイプラインと MLOps 基盤を構築し、自動運転モデルの学習向けに最適化しています。また、単一ノードの GPU で多数の実験ジョブを並列に回すための Rust 製ジョブスケジューラ「slotd」を開発し、オープンソースとして公開しました（<a href=\"https://github.com/ymgaq/slotd\">GitHub</a> / <a href=\"https://zenn.dev/turing_motors/articles/0d528e31b9d8d7\">解説記事</a>）。",
-        },
-      ],
-    },
-    {
-      id: "physical-ai",
-      title: "フィジカルAI",
-      summary: "2022年に Director of AI としてチューリングに参画し、自動運転AIの開発を立ち上げから率いてきました。2024年からは CTO として、完全自動運転に向けたAIの研究開発全体を統括しています。",
-      groups: [
-        {
-          heading: "End-to-End 自動運転",
-          text: "カメラ映像を入力として、運転操作を直接出力する <b>End-to-End</b> 方式の自動運転AIを開発しています。車載計算機でリアルタイムに動作するモデルにより公道での自動運転制御を実証し、現在は東京都内の複雑な市街地を走行する Navigate on Autopilot の開発を進めています。",
-        },
-        {
-          heading: "基盤モデル（VLM / VLA / 世界モデル）",
-          text: "画像と言語を扱う大規模マルチモーダル基盤モデル（<b>VLM</b>）、言語による状況理解と運転操作の生成を一つのモデルで扱う <b>Vision-Language-Action（VLA）モデル</b>、運転操作に応じて将来の走行映像を生成する<b>世界モデル</b>を開発しています。自動運転向けの VLA データセットや時空間推論の VQA データセットを無償で公開し、研究成果を AAAI（Oral）、WACV、および CVPR・ICLR・ICML・ICCV・NeurIPS のワークショップで発表しています（<a href=\"research.html\">Research</a>）。",
-        },
-      ],
-    },
+  systems: [
+    { period: "2021–", name: "NHK杯テレビ将棋トーナメント・囲碁トーナメント", desc: "対局中継の形勢評価と AI の予想手を表示するシステム（将棋は PAL、囲碁は AQ）", url: "https://forest.watch.impress.co.jp/docs/news/1322786.html" },
+    { period: "2024–", name: "日経LIVE 将棋 王座戦 中継", desc: "AI による形勢評価と予想手を表示するシステム", url: "https://www.nikkei.com/live/event/EVT240712002" },
   ],
 
   timeline: [

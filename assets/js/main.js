@@ -38,7 +38,7 @@
   // ===== Header / Footer（全ページ共通） =====
   var PAGES = [
     ["index.html", "Home"], ["research.html", "Research"], ["development.html", "Development"],
-    ["competitions.html", "Competitions"], ["writing.html", "Writing"], ["talks.html", "Talks"], ["media.html", "Media"],
+    ["writing.html", "Writing"], ["talks.html", "Talks"], ["media.html", "Media"],
   ];
   var current = document.body.dataset.page;
   var langBtn = function (code, label) {
@@ -85,20 +85,16 @@
       '. <span class="venue">' + esc(p.venue) + "</span>, " + p.year + ".</span></li>";
   }).join(""));
 
-  // ===== Projects =====
-  fill("topic-toc", ['<a href="#repositories">Repositories</a>'].concat(D.topics.map(function (t) { return '<a href="#' + esc(t.id) + '">' + esc(L(t.title)) + "</a>"; })).join(" / "));
+  // ===== Development =====
+  fill("dev-toc", [
+    ["repositories", "Repositories"], ["systems", L("システム提供実績")], ["shogi-go", "Computer Shogi / Go"], ["kaggle", "Kaggle"],
+  ].map(function (t) { return '<a href="#' + t[0] + '">' + esc(t[1]) + "</a>"; }).join(" / "));
   fill("repo-list", D.repos.map(function (r) {
     return '<li><a class="repo-name" href="' + esc(r.url) + '"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">' + ICONS.GitHub + "</svg>" + esc(r.name.split("/").pop()) + "</a>" +
       ' <span class="sub">' + esc(r.lang) + " · ★ " + r.stars + "</span><br>" + esc(L(r.desc)) + "</li>";
   }).join(""));
-
-  // text は data.js に書いた HTML をそのまま使う
-  fill("topic-list", D.topics.map(function (t) {
-    return '<section class="topic" id="' + esc(t.id) + '"><h2>' + esc(L(t.title)) + "</h2>" +
-      '<p class="lead">' + esc(L(t.summary)) + "</p>" +
-      t.groups.map(function (g) {
-        return "<h3>" + esc(L(g.heading)) + "</h3><p>" + L(g.text) + "</p>";
-      }).join("") + "</section>";
+  fill("system-list", D.systems.map(function (x) {
+    return row(x.period, link(L(x.name), x.url) + '<br><span class="sub">' + esc(L(x.desc)) + "</span>");
   }).join(""));
 
   // ===== Competitions =====

@@ -15,6 +15,13 @@ window.SITE_EN = {
   "Solo": "Solo",
   "Team": "Team",
 
+  // ===== Development =====
+  "システム提供実績": "Systems in Service",
+  "NHK杯テレビ将棋トーナメント・囲碁トーナメント": "NHK Cup Shogi and Go Tournaments (NHK TV)",
+  "対局中継の形勢評価と AI の予想手を表示するシステム（将棋は PAL、囲碁は AQ）": "System displaying AI position evaluations and predicted moves in game broadcasts (PAL for Shogi, AQ for Go)",
+  "日経LIVE 将棋 王座戦 中継": "Nikkei LIVE broadcasts of the Oza Shogi title match",
+  "AI による形勢評価と予想手を表示するシステム": "System displaying AI position evaluations and predicted moves",
+
   // ===== Research =====
   "NEDO 競争力ある生成AI基盤モデルの開発（GENIAC 第4期）": "NEDO GENIAC (Phase 4), Development of Competitive Generative AI Foundation Models",
   "NEDO 競争力ある生成AI基盤モデルの開発（GENIAC 第3期）": "NEDO GENIAC (Phase 3), Development of Competitive Generative AI Foundation Models",
