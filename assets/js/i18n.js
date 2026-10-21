@@ -23,7 +23,7 @@ window.SITE_EN = {
   "AI による形勢評価と予想手を表示するシステム": "System displaying AI position evaluations and predicted moves",
 
   // ===== Research =====
-  "NEDO 競争力ある生成AI基盤モデルの開発（GENIAC 第4期）": "NEDO GENIAC (Phase 4), Development of Competitive Generative AI Foundation Models",
+  "NEDO ロボット基盤モデルの開発（GENIAC 第4期）": "NEDO GENIAC (Phase 4), Development of Robot Foundation Models",
   "NEDO 競争力ある生成AI基盤モデルの開発（GENIAC 第3期）": "NEDO GENIAC (Phase 3), Development of Competitive Generative AI Foundation Models",
   "NEDO 競争力ある生成AI基盤モデルの開発（GENIAC 第2期）": "NEDO GENIAC (Phase 2), Development of Competitive Generative AI Foundation Models",
   "NEDO 競争力ある生成AI基盤モデルの開発（GENIAC 第1期）": "NEDO GENIAC (Phase 1), Development of Competitive Generative AI Foundation Models",
@@ -147,4 +147,5 @@ window.SITE_EN = {
   "AI白書2025 生成AIエディション（角川アスキー総合研究所）": "AI White Paper 2025: Generative AI Edition (Kadokawa ASCII Research Laboratories)",
   "ビジネス+IT": "Business+IT",
   "東洋経済オンライン": "Toyo Keizai Online",
+  "ITmedia ビジネスオンライン": "ITmedia Business Online",
 };

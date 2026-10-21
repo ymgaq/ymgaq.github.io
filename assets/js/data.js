@@ -2,7 +2,7 @@
  * 公開情報のみを掲載（社内情報・未公開の項目は docs/*.md 側で管理）。 */
 window.SITE_DATA = {
   research: [
-    { period: "2026–", program: "NEDO 競争力ある生成AI基盤モデルの開発（GENIAC 第4期）", title: "完全自動運転に向けたフィジカル基盤モデルの開発と車載E2Eシステムの実装", role: "", desc: "フィジカル基盤モデルを、車載の End-to-End 自動運転システムとして実装します。", url: "https://www.nedo.go.jp/koubo/CD3_100427.html" },
+    { period: "2026–", program: "NEDO ロボット基盤モデルの開発（GENIAC 第4期）", title: "完全自動運転に向けたフィジカル基盤モデルの開発と車載E2Eシステムの実装", role: "研究代表者", desc: "フィジカル基盤モデルを、車載の End-to-End 自動運転システムとして実装します。", url: "https://www.nedo.go.jp/koubo/CD3_100427.html" },
     { period: "2025–2026", program: "NEDO 競争力ある生成AI基盤モデルの開発（GENIAC 第3期）", title: "完全自動運転に向けた車載可能なフィジカル基盤モデルの開発", role: "研究代表者", desc: "車載計算機で動作する Vision-Language-Action モデルを開発し、公道でのリアルタイム自動運転制御を実証しました。因果推論データセットと高圧縮の画像トークナイザも公開しています。", url: "https://tur.ing/news/20260326/" },
     { period: "2025", program: "NEDO 競争力ある生成AI基盤モデルの開発（GENIAC 第2期）", title: "完全自動運転に向けた身体性ある大規模マルチモーダル基盤モデルの開発", role: "研究代表者", desc: "運転行動と結び付いた大規模マルチモーダル基盤モデルと、日本語の画像・テキストデータセットを開発・公開しました。", url: "https://geniac.meti.go.jp/geniac_magazine/interimreport_2.html" },
     { period: "2024–2025", program: "NEDO ディープテック・スタートアップ支援事業（STSフェーズ）", title: "完全自動運転を実現するAI基盤モデルの開発", role: "研究代表者", desc: "", url: "https://www.nedo.go.jp/news/press/AA5_101775.html" },
@@ -111,6 +111,7 @@ window.SITE_DATA = {
   ],
 
   media: [
+    { date: "2026-10", outlet: "ITmedia ビジネスオンライン", title: "“テスラ超え”狙う――チューリング「完全自動運転」までの道　「GPUより速いチップ」使った開発のウラ側", url: "https://www.itmedia.co.jp/business/articles/2610/20/news017.html" },
     { date: "2026-07", outlet: "Bloomberg", title: "Self-Driving Startup Turing Gets AMD Backing, Adopts AMD GPUs", url: "https://www.bloomberg.com/news/articles/2026-07-06/self-driving-startup-turing-gets-amd-backing-adopts-amd-gpus" },
     { date: "2026-06", outlet: "週刊エコノミスト 2026年6月16日号", title: "特集「到来！フィジカルAI」", url: "https://www.fujisan.co.jp/product/214/b/2797300/" },
     { date: "2026-05", outlet: "ASCII.jp", title: "完全自動運転の実現へ、チューリングが開発基盤にGMO GPUクラウドを選んだ理由", url: "https://ascii.jp/elem/000/004/401/4401316/" },
