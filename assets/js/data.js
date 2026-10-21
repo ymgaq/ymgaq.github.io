@@ -26,7 +26,7 @@ window.SITE_DATA = {
 
   timeline: [
     { period: "2024.08 —", org: "Turing株式会社", role: "CTO", kind: "work" },
-    { period: "2023 — 2026", org: "慶應義塾大学 SFC研究所", role: "上席所員", kind: "academic" },
+    { period: "2023.04 — 2026.03", org: "慶應義塾大学 SFC研究所", role: "上席所員", kind: "academic" },
     { period: "2022.04 — 2024.07", org: "Turing株式会社", role: "Director of AI（創業メンバー）", kind: "work" },
     { period: "2021.08 — 2022.03", org: "HEROZ株式会社", role: "執行役員 CAIO", kind: "work" },
     { period: "2020.08 — 2021.07", org: "HEROZ株式会社", role: "機械学習エンジニア", kind: "work" },
