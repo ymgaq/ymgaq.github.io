@@ -64,7 +64,7 @@ window.SITE_DATA = {
   ],
 
   kaggle: [
-    { date: "2026.10", name: "Kaggriculture", rank: "81 / 10,148", medal: "silver", team: "Solo", url: "https://www.kaggle.com/competitions/kaggriculture", writeup: "" },
+    { date: "2026.10", name: "Kaggriculture", rank: "93 / 10,148", medal: "silver", team: "Solo", url: "https://www.kaggle.com/competitions/kaggriculture", writeup: "" },
     { date: "2026.09", name: "Biohub - Cell Tracking During Development", rank: "18 / 3,947", medal: "silver", team: "Solo", url: "https://www.kaggle.com/competitions/biohub-cell-tracking-during-development", writeup: "https://www.kaggle.com/competitions/biohub-cell-tracking-during-development/writeups/18th-place-solution-lineage-graph-refinement" },
     { date: "2026.08", name: "PTCG AI Battle Challenge", rank: "24 / 6,807", medal: "", team: "Team", url: "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle", writeup: "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/writeups/24th-solution-a-population-based-rl-ecosystem" },
     { date: "2026.07", name: "The 2026 NeuroGolf Championship", rank: "13 / 2,963", medal: "gold", team: "Team", url: "https://www.kaggle.com/competitions/neurogolf-2026", writeup: "" },
