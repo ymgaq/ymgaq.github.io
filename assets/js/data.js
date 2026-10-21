@@ -12,7 +12,7 @@ window.SITE_DATA = {
   ],
 
   repos: [
-    { name: "ymgaq/AQ", url: "https://github.com/ymgaq/AQ", lang: "C++", stars: 336, desc: "超人間級の囲碁AI。世界で初めてオープンソースで公開した囲碁エンジン" },
+    { name: "ymgaq/AQ", url: "https://github.com/ymgaq/AQ", lang: "C++", stars: 336, desc: "超人間級の囲碁AIとして、世界で初めてオープンソースで公開した囲碁エンジン" },
     { name: "ymgaq/slotd", url: "https://github.com/ymgaq/slotd", lang: "Rust", stars: 45, desc: "単一ノード向けの軽量ジョブスケジューラ" },
     { name: "turingmotors/heron", url: "https://github.com/turingmotors/heron", lang: "Python", stars: 179, desc: "画像・動画と言語のマルチモーダルモデルを統合的に学習するライブラリ（コントリビュータ）" },
     { name: "turingmotors/swan", url: "https://github.com/turingmotors/swan", lang: "C++", stars: 179, desc: "FPGA 上で言語モデルの推論を行うプロジェクト（コントリビュータ）" },

@@ -47,7 +47,7 @@ window.SITE_EN = {
   "産総研の AI橋渡しクラウド（ABCI）で、GPU最大1,100基を用いる並列分散強化学習を設計・開発しました。": "Designed and built parallel distributed reinforcement learning using up to 1,100 GPUs on AIST's AI Bridging Cloud Infrastructure (ABCI).",
 
   // ===== Repositories =====
-  "超人間級の囲碁AI。世界で初めてオープンソースで公開した囲碁エンジン": "Superhuman Go engine — the world's first open-source superhuman Go AI",
+  "超人間級の囲碁AIとして、世界で初めてオープンソースで公開した囲碁エンジン": "Go engine released as the world's first open-source superhuman Go AI",
   "単一ノード向けの軽量ジョブスケジューラ": "Lightweight job scheduler for single-node GPU workloads",
   "画像・動画と言語のマルチモーダルモデルを統合的に学習するライブラリ（コントリビュータ）": "Library for training vision/video-language multimodal models (contributor)",
   "FPGA 上で言語モデルの推論を行うプロジェクト（コントリビュータ）": "Language model inference on FPGAs (contributor)",
