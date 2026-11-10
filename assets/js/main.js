@@ -31,7 +31,7 @@
 
   // 新しい順に並べる
   var key = function (d) { return /^\d/.test(d || "") ? String(d).replace(/\./g, "-") : "0"; };
-  ["shogiGo", "kaggle", "talks", "tv", "media", "writing"].forEach(function (k) {
+  ["shogiGo", "kaggle", "talks", "tv", "youtube", "media", "writing"].forEach(function (k) {
     D[k].sort(function (a, b) { return key(b.date) < key(a.date) ? -1 : key(b.date) > key(a.date) ? 1 : 0; });
   });
 
@@ -115,6 +115,11 @@
   }).join(""));
   fill("tv-list", D.tv.map(function (m) {
     return row(fmt(m.date), esc(L(m.outlet)) + " " + quote(link(m.title, m.url)));
+  }).join(""));
+  fill("youtube-list", D.youtube.map(function (y) {
+    var no = /^\d+$/.test(y.no) ? "#" + y.no : L(y.no);
+    var article = y.article ? " [" + link(L("記事"), y.article) + "]" : "";
+    return row(fmt(y.date), "Turing TechTalk " + esc(no) + " " + quote(link(y.title, y.url)) + article);
   }).join(""));
   fill("media-list", D.media.map(function (m) {
     return row(fmt(m.date), esc(L(m.outlet)) + " " + quote(link(m.title, m.url)));

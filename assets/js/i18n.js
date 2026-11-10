@@ -11,6 +11,8 @@ window.SITE_EN = {
   "[予定]": "[Upcoming]",
   "動画": "Video",
   "解法": "Solution",
+  "記事": "Article",
+  "特別版": "Special",
   "技術記事": "Technical Articles",
   "Solo": "Solo",
   "Team": "Team",
