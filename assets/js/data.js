@@ -64,9 +64,10 @@ window.SITE_DATA = {
   ],
 
   kaggle: [
+    { date: "2026.10", name: "RSNA Knee Abnormality Detection", rank: "64 / 6,299", medal: "silver", team: "Solo", url: "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection", writeup: "" },
     { date: "2026.10", name: "Kaggriculture", rank: "93 / 10,148", medal: "silver", team: "Solo", url: "https://www.kaggle.com/competitions/kaggriculture", writeup: "" },
     { date: "2026.09", name: "Biohub - Cell Tracking During Development", rank: "18 / 3,947", medal: "silver", team: "Solo", url: "https://www.kaggle.com/competitions/biohub-cell-tracking-during-development", writeup: "https://www.kaggle.com/competitions/biohub-cell-tracking-during-development/writeups/18th-place-solution-lineage-graph-refinement" },
-    { date: "2026.08", name: "PTCG AI Battle Challenge", rank: "24 / 6,807", medal: "", team: "Team", url: "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle", writeup: "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/writeups/24th-solution-a-population-based-rl-ecosystem" },
+    { date: "2026.08", name: "PTCG AI Battle Challenge", rank: "24 / 6,807", medal: "silver", team: "Team", url: "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle", writeup: "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/writeups/24th-solution-a-population-based-rl-ecosystem" },
     { date: "2026.07", name: "The 2026 NeuroGolf Championship", rank: "13 / 2,963", medal: "gold", team: "Team", url: "https://www.kaggle.com/competitions/neurogolf-2026", writeup: "" },
     { date: "2026.07", name: "Orbit Wars", rank: "153 / 4,729", medal: "silver", team: "Solo", url: "https://www.kaggle.com/competitions/orbit-wars", writeup: "" },
     { date: "2025.10", name: "2COOOL — ICCV 2025 Workshop Challenge", rank: "2nd place", medal: "award", team: "Team", url: "https://www.kaggle.com/competitions/2coool", writeup: "https://arxiv.org/abs/2510.12190" },
@@ -184,6 +185,7 @@ window.SITE_DATA = {
   ],
 
   writing: [
+    { date: "2026-11", site: "Zenn", title: "物理世界とAIをつなぐ：可視化で学ぶカメラ・座標系・運動制御入門", url: "https://zenn.dev/turing_motors/articles/cea9e3c85611b2" },
     { date: "2025-08", site: "Speaker Deck", title: "Kaggleに役立つ高速化・並列化テクニック", url: "https://speakerdeck.com/yuyamaguchi/kaggleniyi-li-tugao-su-hua-bing-lie-hua-tekunituku" },
     { date: "2026-09", site: "Kaggle", title: "18th Place Solution: Lineage Graph Refinement（Biohub - Cell Tracking During Development）", url: "https://www.kaggle.com/competitions/biohub-cell-tracking-during-development/writeups/18th-place-solution-lineage-graph-refinement" },
     { date: "2026-04", site: "Zenn", title: "手元のGPUを遊ばせないためのジョブスケジューラ入門", url: "https://zenn.dev/turing_motors/articles/0d528e31b9d8d7" },
